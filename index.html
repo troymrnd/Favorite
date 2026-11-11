@@ -47,6 +47,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 12px;
+            overflow: visible;
         }
 
         .photo {
@@ -58,17 +59,23 @@
             border: 4px solid white;
             box-shadow: 0 3px 8px rgba(0,0,0,0.12);
 
-            /* Hover animation */
-            transition: transform 0.4s ease,
-                        box-shadow 0.4s ease;
+            transition: all 0.4s ease;
             cursor: pointer;
+            position: relative;
+            z-index: 1;
         }
 
-        /* Image hover effect */
+        /* Half-screen zoom effect */
         .photo:hover {
-            transform: scale(1.12) translateY(-5px);
-            box-shadow: 0 10px 20px rgba(89, 52, 13, 0.3);
-            z-index: 2;
+            position: relative;
+            z-index: 100;
+            width: 50vw;
+            height: 50vh;
+            max-width: 600px;
+            max-height: 600px;
+            object-fit: contain;
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(89, 52, 13, 0.5);
         }
 
         .footer {
@@ -77,9 +84,17 @@
             font-size: 14px;
         }
 
-        /* Smooth effect on mobile tap */
-        .photo:active {
-            transform: scale(1.05);
+        @media (max-width: 600px) {
+            .photo:hover {
+                width: 75vw;
+                height: 50vh;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .photo {
+                transition: none;
+            }
         }
 
     </style>
@@ -96,25 +111,22 @@
         <div class="photo-grid">
 
             <img src="image1.jfif" alt="Memory 1" class="photo">
-
             <img src="image2.jfif" alt="Memory 2" class="photo">
 
             <img src="image3.jfif" alt="Memory 3" class="photo">
-
             <img src="image4.jfif" alt="Memory 4" class="photo">
 
             <img src="image5.jfif" alt="Memory 5" class="photo">
-
             <img src="image6.jfif" alt="Memory 6" class="photo">
 
             <img src="image7.jfif" alt="Memory 7" class="photo">
-
             <img src="image8.jfif" alt="Memory 8" class="photo">
 
         </div>
 
         <p class="footer">
-           One of my favorite moments with you. I Love you Misis ko! ♡
+            One of my favorite moments with you.
+            I Love you Misis ko! ♡
         </p>
 
     </div>
