@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Favorite Memories ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #ffeadb;
+            font-family: Georgia, serif;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            background: #ffeadb;
+            padding: 25px 20px;
+            text-align: center;
+            border-radius: 20px;
+        }
+
+        .camera {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: #59340d;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .photo {
+            width: 100%;
+            height: 125px;
+            display: block;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 4px solid white;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+
+            /* Hover animation */
+            transition: transform 0.4s ease,
+                        box-shadow 0.4s ease;
+            cursor: pointer;
+        }
+
+        /* Image hover effect */
+        .photo:hover {
+            transform: scale(1.12) translateY(-5px);
+            box-shadow: 0 10px 20px rgba(89, 52, 13, 0.3);
+            z-index: 2;
+        }
+
+        .footer {
+            margin-top: 18px;
+            color: #805b3b;
+            font-size: 14px;
+        }
+
+        /* Smooth effect on mobile tap */
+        .photo:active {
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="camera">📷</div>
+
+        <h1>Our Favorite Memories ❤️</h1>
+
+        <div class="photo-grid">
+
+            <img src="image1.jfif" alt="Memory 1" class="photo">
+
+            <img src="image2.jfif" alt="Memory 2" class="photo">
+
+            <img src="image3.jfif" alt="Memory 3" class="photo">
+
+            <img src="image4.jfif" alt="Memory 4" class="photo">
+
+            <img src="image5.jfif" alt="Memory 5" class="photo">
+
+            <img src="image6.jfif" alt="Memory 6" class="photo">
+
+            <img src="image7.jfif" alt="Memory 7" class="photo">
+
+            <img src="image8.jfif" alt="Memory 8" class="photo">
+
+        </div>
+
+        <p class="footer">
+           One of my favorite moments with you. I Love you Misis ko! ♡
+        </p>
+
+    </div>
+
+</body>
+</html>
